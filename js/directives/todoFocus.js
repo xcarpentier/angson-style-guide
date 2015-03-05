@@ -4,7 +4,8 @@
  * Directive that places focus on the element it is applied to when the
  * expression it binds to evaluates to true
  */
-angular.module('todomvc')
+(function(){
+	angular.module('todomvc')
 	.directive('todoFocus', function todoFocus($timeout) {
 		'use strict';
 
@@ -18,3 +19,4 @@ angular.module('todomvc')
 			});
 		};
 	});
+})();
