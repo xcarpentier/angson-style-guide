@@ -7,7 +7,9 @@
  * They both follow the same API, returning promises for all changes to the
  * model.
  */
-angular.module('todomvc')
+(function(){
+
+	angular.module('todomvc')
 	.factory('todoStorage', function ($http, $injector) {
 		'use strict';
 
@@ -19,8 +21,12 @@ angular.module('todomvc')
 			}, function () {
 				return $injector.get('localStorage');
 			});
-	})
+	});
 
+})();
+
+(function(){
+	angular.module('todomvc')
 	.factory('api', function ($http) {
 		'use strict';
 
@@ -102,7 +108,10 @@ angular.module('todomvc')
 
 		return store;
 	})
+})();
 
+(function(){
+	angular.module('todomvc')
 	.factory('localStorage', function ($q) {
 		'use strict';
 
@@ -185,3 +194,6 @@ angular.module('todomvc')
 
 		return store;
 	});
+})();
+
+
